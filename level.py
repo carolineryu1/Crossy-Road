@@ -9,10 +9,7 @@ The subcontroller Level manages the frog and all of the obstacles. However, thos
 all defined in models.py.  The only thing in this class is the level class and all of
 the individual lanes.
 
-This module should not contain any more classes than Levels. If you need a new class,
-it should either go in the lanes.py module or the models.py module.
-
-Author: Caroline Ryu (jr894)
+Author: Caroline Ryu 
 Date: December 21, 2020
 """
 from game2d import *
@@ -20,35 +17,10 @@ from consts import *
 from lanes  import *
 from models import *
 
-# PRIMARY RULE: Level can only access attributes in models.py or lanes.py using getters
-# and setters. Level is NOT allowed to access anything in app.py (Subcontrollers are not
-# permitted to access anything in their parent. To see why, take CS 3152)
-
 
 class Level(object):
     """
     This class controls a single level of Froggit.
-
-    This subcontroller has a reference to the frog and the individual lanes.  However,
-    it does not directly store any information about the contents of a lane (e.g. the
-    cars, logs, or other items in each lane). That information is stored inside of the
-    individual lane objects.
-
-    If you want to pause the game, tell this controller to draw, but do not update.  See
-    subcontrollers.py from Lesson 27 for an example.  This class will be similar to that
-    one in many ways.
-
-    All attributes of this class are to be hidden.  No attribute should be accessed
-    without going through a getter/setter first.  However, just because you have an
-    attribute does not mean that you have to have a getter for it.  For example, the
-    Froggit app probably never needs to access the attribute for the Frog object, so
-    there is no need for a getter.
-
-    The one thing you DO need a getter for is the width and height.  The width and height
-    of a level is different than the default width and height and the window needs to
-    resize to match.  That resizing is done in the Froggit app, and so it needs to access
-    these values in the level.  The height value should include one extra grid square
-    to suppose the number of lives meter.
     """
     # HIDDEN ATTRIBUTES
     # Attribute: _width: a width of the game in pixels
@@ -124,12 +96,6 @@ class Level(object):
         """
         Initializes the level settings to create a frog and the lanes from the
         given JSON
-
-        The intiailizer sets the width and the height of the game as well as
-        each of the lanes provided by the JSON. It also sets the cooldown
-        attribute to 0 to be called in the update later. It creates a frog
-        object, adds frogheads to the livescounter, and creates a label to
-        display the lives. It initializes the offscreen buffer attribute as well.
 
         Parameter json: A json file to set the level to
         Precondition: A valid json file containing all information to set the
