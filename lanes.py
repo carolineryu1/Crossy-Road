@@ -266,10 +266,3 @@ class Hedge(Lane):
         as the source file and the positions of the frog.
         """
         return self._safefrogs
-
-    # INITIALIZER TO SET ADDITIONAL EXIT INFORMATION
-
-    # ANY ADDITIONAL METHODS
-
-
-# IF YOU NEED ADDITIONAL LANE CLASSES, THEY GO HERE
